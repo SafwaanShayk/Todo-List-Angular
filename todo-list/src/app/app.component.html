@@ -1,0 +1,30 @@
+<div class="container-sm">
+  <div class="row align-items-center">
+    <div class="col">
+      <h1>TODO LIST</h1>
+      <hr />
+      <input type="text" [(ngModel)]="addToItems" />
+      <button
+        [disabled]="addToItems === ''"
+        class="btn btn-primary"
+        style="margin-left: 5px"
+        (click)="onAdd()"
+      >
+        Add
+      </button>
+
+      <ul>
+        <li *ngFor="let item of items; let index = i" style="padding: 15px">
+          {{ item }}
+          <button
+            class="btn btn-danger"
+            style="margin-left: 5px"
+            (click)="onDelete()"
+          >
+            Delete
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
